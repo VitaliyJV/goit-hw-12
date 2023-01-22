@@ -1,17 +1,77 @@
 package task_2;
 
+import java.util.concurrent.Semaphore;
+import java.util.stream.Stream;
+
 public class Main {
 
-    public static void main(String[] args) {    //Press "Start" to start the code
-        Number num1 = new Number();
-        Thread thA = new Thread(num1);
-        Thread thB = new Thread(num1);
-        Thread thC = new Thread(num1);
-        Thread thD = new Thread(num1);
+    protected static final int MAX_NUM = 25;        // число n в условии задачи
+
+    public static void main(String[] args) throws InterruptedException {    //Press "Start" to start the code
+        Semaphore th1canTest = new Semaphore(0);
+        Semaphore th2canTest = new Semaphore(0);
+        Semaphore th3canTest = new Semaphore(0);
+        Semaphore th4canTest = new Semaphore(0);
+
+        Thread thC = new Thread(new Number(th1canTest, th4canTest) {
+            @Override
+            public void testAndPrint(int number) {
+                if (number % 3 == 0 && number % 5 == 0) {
+                    System.out.print("fizzbuzz, ");
+                }
+            }
+        }, "C");
+        Thread thA = new Thread(new Number(th2canTest, th4canTest) {
+            @Override
+            public void testAndPrint(int number) {
+                if (number % 3 == 0 && number % 5 != 0) {
+                    System.out.print("fizz, ");
+                }
+            }
+        }, "A");
+        Thread thB = new Thread(new Number(th3canTest, th4canTest) {
+            @Override
+            public void testAndPrint(int number) {
+                if (number % 5 == 0 && number % 3 != 0) {
+                    System.out.print("buzz, ");
+                }
+            }
+        }, "B");
+
+        Thread thD = new Thread(() -> {
+
+            for (int i = 0; i < MAX_NUM; i++) {
+                // System.err.println("thread " + Thread.currentThread().getName() + " before increment");
+
+                Number.number++;
+                th1canTest.release();
+                th2canTest.release();
+                th3canTest.release();
+
+                // System.err.println("thread " + Thread.currentThread().getName() + " before th4canTest.acquire");
+
+                try {
+                    th4canTest.acquire(3);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                // System.err.println("thread " + Thread.currentThread().getName() + " after th4canTest.acquire");
+
+                int number = Number.number;
+                if (number % 3 != 0 && number % 5 != 0) {
+                    System.out.print(number + ", ");
+                }
+            }
+        }, "D");
+
         thA.start();
         thB.start();
         thC.start();
         thD.start();
+
+        while (Stream.of(thA, thB, thC, thC, thD).anyMatch(Thread::isAlive)) {
+            Thread.sleep(1000);
+        }
     }
 }
 

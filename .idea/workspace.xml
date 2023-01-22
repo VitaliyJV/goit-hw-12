@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5541492e-abd3-4547-8e55-660f45c3cf55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task_2/MainSolution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task_2/Number.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task_2/NumberTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task_1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task_1/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task_1/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task_1/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task_2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task_2/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task_2/Number.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +41,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vitaliy/goit_hw_11&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vitaliy/goit-hw-12&quot;
   }
 }</component>
   <component name="RecentsManager">
