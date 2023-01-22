@@ -1,16 +1,14 @@
-package org.example;
+package task_1;
 
 public class Waiter implements Runnable{
     private final int period;
     private final String mes;
-
     public Waiter(int period){
         this.period = period;
         this.mes = "Прошло " + period + " сек.";
         Thread t = new Thread(this);
         t.start();
     }
-
     @Override
     public void run() {
         try {
@@ -24,5 +22,4 @@ public class Waiter implements Runnable{
             e.printStackTrace();
         }
     }
-
 }

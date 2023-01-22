@@ -1,14 +1,12 @@
-package org.example;
+package task_1;
 
 public class Timer implements Runnable {
     private final int frequency;
-
     public Timer(int frequency) {
         this.frequency = frequency;
         Thread th1 = new Thread(this);
         th1.start();
     }
-
     @Override
     public void run() {
         System.out.println("Let's start: ");
@@ -24,6 +22,5 @@ public class Timer implements Runnable {
             e.printStackTrace();
         }
     }
-
 }
 
